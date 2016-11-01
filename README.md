@@ -6,7 +6,7 @@ An application for users to leave anonymous reviews for parks, by city.
 
 ![Schema for Parkr-Anon](app/assets/images/parkr-anon-schema.png)
 
-## Premises
+## Premises (for fleshing out necessary routes/actions)
 
 * User should be able to see all cities
 
@@ -42,3 +42,9 @@ An application for users to leave anonymous reviews for parks, by city.
     * POST `/cities/:city_id/parks/:park_id/reviews`
     * PUT `/cities/:city_id/parks/:park_id/reviews/:id`
     * DELETE `/cities/:city_id/parks/:park_id/reviews/:id`
+
+## Client Requests (for custom routes)
+
+"I want to be redirected to the page with all of the cities when I visit `/`."
+
+"I want an alternate URL in addition to `/cities` to see all cities. It should be `/cities/all`".
