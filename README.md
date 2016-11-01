@@ -29,12 +29,11 @@ An application for users to leave anonymous reviews for parks, by city.
   * Indicate necessity of paths:
     * GET `/cities/:city_id/parks/:id`
 
-* User should be able to edit a park listing
+* User should be able to edit (but not delete) a park listing
 
   * Indicate necessity of paths:
     * GET `/cities/:city_id/parks/:id/edit`
     * PUT `/cities/:city_id/parks/:id/`
-    * DELETE `/cities/:city_id/parks/:id`
 
 * User should be able to write, edit, and delete a review for a park listing
 
