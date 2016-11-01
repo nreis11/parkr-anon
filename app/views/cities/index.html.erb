@@ -3,6 +3,8 @@
 </p>
 
 <% @cities.each do |city| %>
-  <!-- Want these all to be links to the city show for each city -->
-  <p><%= city.name %></p>
+  <p>
+    <!-- Want these all to be links to the city show for each city -->
+    <span class="text-danger"><%= city.name %></span>
+  </p>
 <% end %>

@@ -1,3 +1,42 @@
 <p class="bg-info">
   Find me in app/views/parks/show.html.erb
 </p>
+
+<h3>
+  Information for <%= @park.name %>
+</h3>
+
+<p>
+  <!-- Want this city name to be a link back to the city -->
+  <strong>City:</strong> <span class="text-danger"><%= @park.city.name %></span><br>
+  <strong>Description:</strong> <%= @park.description %>
+</p>
+
+<p>
+  <!-- Want this to be a link to edit the park information -->
+  <span class='small text-danger'>Edit Park Information</span><br>
+  <!-- Want this to be a link to delete the park from the database -->
+  <span class='small text-danger'>Delete Park</span>
+</p>
+
+<h4>
+  Reviews for <%= @park.name %>
+</h4>
+
+<p>
+  <!-- Want this to be a link to the create a new review page -->
+  <span class="text-danger">Create a new review</span>
+</p>
+
+<p>
+  <% @park.reviews.each do |review| %>
+    <p>
+      <strong>Title:</strong> <%= review.title %><br>
+      <strong>Body:</strong> <%= review.body %><br>
+      <!-- Want this to be a link to edit the review -->
+      <span class='small text-danger'>Edit Review</span><br>
+      <!-- Want this to be a link to delete the review -->
+      <span class='small text-danger'>Delete Review</span>
+    </p>
+  <% end %>
+</p>

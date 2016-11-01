@@ -1,0 +1,21 @@
+<p class="bg-info">
+  Find me in app/views/parks/index.html.erb
+</p>
+
+<h3>
+  All Parks for <%= @city.name %>
+</h3>
+
+<p>
+  <!-- Want this to be a link to the create a new park page -->
+  <span class="text-danger">Create a new park</span>
+</p>
+
+<p>
+  <% @parks.each do |park| %>
+    <p>
+      <!-- Want these all to be links to the parks show for each park -->
+      <span class="text-danger"><%= park.name %></span>
+    </p>
+  <% end %>
+</p>
