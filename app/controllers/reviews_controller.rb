@@ -5,8 +5,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
 
     if request.xhr?
-      # render partial: 'form', locals: {city: @city, park: @park, review: @review}
-      render html: 'blah'
+      render partial: 'form'
     end
   end
 

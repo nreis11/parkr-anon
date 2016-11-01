@@ -21,16 +21,17 @@ class ParksController < ApplicationController
 
   def create
     @city = City.find(params[:city_id])
-    @park = Park.new
-    @park.assign_attributes(park_params)
+    @park = Park.new(park_params)
     @park.city = @city
 
     if @park.save
       # redirect to the park show
-      # redirect_to ...
+      redirect_to city_park_path(@city, @park)
     else
       @errors = @park.errors.full_messages
       # render the new page again
+      # for argument to render, look inside view folder, not routes!
+      render 'new'
     end
   end
 
@@ -39,11 +40,11 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
     if @park.update(park_params)
       # redirect to the park show
-      # redirect_to ...
+      redirect_to city_park_path(@city, @park)
     else
       @errors = @park.errors.full_messages
       # render the edit page again
-      # render ...
+      render 'edit'
     end
   end
 

@@ -8,14 +8,14 @@
 
 <p>
   <!-- Want this to be a link to the create a new park page -->
-  <span class="text-danger">Create a new park</span>
+  <%= link_to 'Create a new park', new_city_park_path(@city) %>
 </p>
 
 <p>
   <% @parks.each do |park| %>
     <p>
       <!-- Want these all to be links to the parks show for each park -->
-      <span class="text-danger"><%= park.name %></span>
+      <%= link_to park.name, city_park_path(@city, park), class: "parkling" %>
     </p>
   <% end %>
 </p>

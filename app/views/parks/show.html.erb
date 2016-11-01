@@ -8,15 +8,13 @@
 
 <p>
   <!-- Want this city name to be a link back to the city -->
-  <strong>City:</strong> <span class="text-danger"><%= @city.name %></span><br>
+  <strong>City:</strong> <%= link_to @city.name, city_parks_path(@city) %><br>
   <strong>Description:</strong> <%= @park.description %>
 </p>
 
 <p>
   <!-- Want this to be a link to edit the park information -->
-  <span class='small text-danger'>Edit Park Information</span><br>
-  <!-- Want this to be a link to delete the park from the database -->
-  <span class='small text-danger'>Delete Park</span>
+  <%= link_to 'Edit Park Information', edit_city_park_path(@city, @park)  %></span>
 </p>
 
 <h4>
@@ -25,7 +23,8 @@
 
 <p>
   <!-- Want this to be a link to the create a new review page -->
-  <span class="text-danger"><%= link_to 'Create a new review', new_city_park_review_path(@city, @park), remote: true, class: 'new_review_link' %></span>
+  <!-- remote: true tells Rails that upon clicking this link (or in the case of a form, submitting the form), you are making an xhr request -->
+  <%= link_to 'Create a new review', new_city_park_review_path(@city, @park), class: 'new_review_link' %>
 
   <div id="form-container">
   </div>

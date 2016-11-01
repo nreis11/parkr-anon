@@ -17,7 +17,7 @@
 <% end %>
 
 <div>
-  <%= form_for([@city, @park, @review]) do |f| %>
+  <%= form_for([@city, @park, @review], remote: true) do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title, placeholder: "Title of your Review" %><br>
 
