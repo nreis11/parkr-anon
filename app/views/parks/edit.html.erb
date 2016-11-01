@@ -1,3 +1,30 @@
 <p class="bg-info">
   Find me in app/views/parks/edit.html.erb
 </p>
+
+<h3>
+  Edit a new park listing
+</h3>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+<!-- Want a form that routes to the correct path here to update a park -->
+<%= form_for '#' do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br>
+
+  <%= f.submit %>
+<% end %>
+</div>

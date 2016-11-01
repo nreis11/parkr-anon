@@ -1,3 +1,29 @@
 <p class="bg-info">
   Find me in app/views/reviews/new.html.erb
 </p>
+
+<h3>
+  Create a new review for <%= @park.name %>
+</h3>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+  <%= form_for([@city, @park, @review]) do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, placeholder: "Title of your Review" %><br>
+
+    <%= f.label :body %><br>
+    <%= f.text_area :body, placeholder: "Describe your experience at the park" %><br>
+
+    <%= f.submit %>
+  <% end %>
+</div>

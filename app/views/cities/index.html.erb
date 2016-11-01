@@ -1,0 +1,10 @@
+<p class="bg-info">
+  Find me in app/views/cities/index.html.erb
+</p>
+
+<% @cities.each do |city| %>
+  <p>
+    <!-- Want these all to be links to the city show for each city -->
+    <span class="text-danger"><%= city.name %></span>
+  </p>
+<% end %>
