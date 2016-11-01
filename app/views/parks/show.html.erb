@@ -8,15 +8,13 @@
 
 <p>
   <!-- Want this city name to be a link back to the city -->
-  <strong>City:</strong> <span class="text-danger"><%= @city.name %></span><br>
+  <strong>City:</strong> <%= link_to @city.name, city_parks_path(@city) %><br>
   <strong>Description:</strong> <%= @park.description %>
 </p>
 
 <p>
   <!-- Want this to be a link to edit the park information -->
-  <span class='small text-danger'>Edit Park Information</span><br>
-  <!-- Want this to be a link to delete the park from the database -->
-  <span class='small text-danger'>Delete Park</span>
+  <%= link_to 'Edit Park Information', edit_city_park_path(@city, @park)  %></span>
 </p>
 
 <h4>

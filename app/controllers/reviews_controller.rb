@@ -3,11 +3,6 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-
-    if request.xhr?
-      # render partial: 'form', locals: {city: @city, park: @park, review: @review}
-      render html: 'blah'
-    end
   end
 
   def edit
@@ -19,11 +14,7 @@ class ReviewsController < ApplicationController
     @review.park = @park
 
     if @review.save
-      if request.xhr?
-        render json: @review
-      else
-        redirect_to city_park_path(@city, @park)
-      end
+      redirect_to city_park_path(@city, @park)
     else
       @errors = @review.errors.full_messages
       render 'new'

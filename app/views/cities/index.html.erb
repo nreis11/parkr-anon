@@ -5,6 +5,9 @@
 <% @cities.each do |city| %>
   <p>
     <!-- Want these all to be links to the city show for each city -->
-    <span class="text-danger"><%= city.name %></span>
+    <!-- link_to DISPLAY_TEXT, PATH, OPTIONAL_ARGUMENTS(e.g. ID, remote: true, etc.) -->
+
+    <!-- note: if you'd like to style the HTML object that is created by the Rails helper by giving it a class or an ID, you must do that directly and not to a parent element. -Ellie -->
+    <%= link_to city.name, city_parks_path(city) %>
   </p>
 <% end %>

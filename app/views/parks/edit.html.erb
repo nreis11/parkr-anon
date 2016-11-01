@@ -18,7 +18,7 @@
 
 <div>
 <!-- Want a form that routes to the correct path here to update a park -->
-<%= form_for '#' do |f| %>
+<%= form_for [@city, @park] do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
 

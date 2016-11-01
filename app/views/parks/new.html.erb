@@ -18,7 +18,11 @@
 
 <div>
   <!-- Want a form that routes to the correct path here to create a park -->
-<%= form_for '#' do |f| %>
+
+  <!-- caution: form_for is not the same as form_tag -->
+  <!-- form_for takes active record object(s) and form_tag takes a path -->
+  <!-- thanks michael and ellie :D -->
+<%= form_for [@city, @park] do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name, placeholder: "Enter park name", value: @park.name %><br>
 
