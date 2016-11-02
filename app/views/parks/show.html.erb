@@ -24,7 +24,7 @@
 <p>
   <!-- Want this to be a link to the create a new review page -->
   <!-- remote: true tells Rails that upon clicking this link (or in the case of a form, submitting the form), you are making an xhr request -->
-  <%= link_to 'Create a new review', new_city_park_review_path(@city, @park), class: 'new_review_link' %>
+  <%= link_to 'Create a new review', new_city_park_review_path(@city, @park), class: 'new_review_link', remote: true %>
 
   <div id="form-container">
   </div>

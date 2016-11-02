@@ -6,19 +6,19 @@ $(document).ready(function(){
     // PUT WHATEVER CRAP YOU WANT IN HERE
   // })
 
-  // $('.new_review_link').on('ajax:success', function(event, response){
-  //   console.log(event);
-  //   console.log(response);
-  //
-  //   $('#form-container').append(response);
-  // });
-
-  // $('#form-container').on('ajax:complete', '#new-review', function(event, response){
-  //   console.log("we gucci?");
-  //   console.log(response);
-  // })
-
-  $('#new_review').on('ajax:success', function(event, response){
+  $('.new_review_link').on('ajax:success', function(event, response){
+    console.log(event);
     console.log(response);
+  
+    $('#form-container').append(response);
   });
+
+  $('#form-container').on('ajax:success', '#new_review', function(event, response){
+    console.log("we gucci?");
+    console.log(response);
+  })
+
+  // $('#new_review').on('ajax:success', function(event, response){
+  //   console.log(response);
+  // });
 })
